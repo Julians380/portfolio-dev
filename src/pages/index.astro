@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from '../components/Experience.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import ProfileCheckIcon from '../components/icons/ProfileCheck.astro';
+import Projects from '../components/Projects.astro';
+import Hero from '../components/Hero.astro';
+import TitleSection from '../components/TitleSection.astro';
+import AboutMe from '../components/AboutMe.astro';
+---
+
+<Layout 
+	tittle="Portfolio de Julians Landeras - Desarrollador y Programador web con 3 años de experiencia"
+	description="Contrata a Julians para crear tu aplicación web o móvil. Desarrollador web, desarrollador fullstack, programador web, programador fullstack, programador de aplicaciones web, programador de aplicaciones móviles."	
+>
+	<main class="px-4">
+		<SectionContainer class="py-14 md:py-36">
+			<Hero />
+		</SectionContainer>
+		<div class="space-y-24">			
+			<SectionContainer id="experiencia">
+				<TitleSection>
+					<Briefcase class="size-7" />
+					Experiencia Laboral
+				</TitleSection>
+				
+				<Experience />
+			</SectionContainer>
+			
+			<SectionContainer id="proyectos">
+				<TitleSection>
+					<CodeIcon class="size-7" />
+					Proyectos
+				</TitleSection>
+				
+				<Projects />
+			</SectionContainer>
+
+			<SectionContainer id="sobre-mi">
+				<TitleSection>
+					<ProfileCheckIcon class="size-7" />
+					Sobre mí
+				</TitleSection>
+				
+				<AboutMe  />
+			</SectionContainer>
+		</div>
+	</main>
+</Layout>

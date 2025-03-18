@@ -1,0 +1,143 @@
+---
+import PHPIcon from '../components/icons/PHP.astro';
+import BootstrapIcon from '../components/icons/Bootstrap.astro';
+import JavaScriptIcon from '../components/icons/JavaScript.astro';
+import GitHubIcon from '../components/icons/Github.astro';
+import PythonIcon from '../components/icons/Python.astro';
+import FirebaseIcon from '../components/icons/Firebase.astro';
+import KotlinIcon from '../components/icons/Kotlin.astro';
+import JsonIcon from '../components/icons/JSON.astro';
+import HtmlIcon from './icons/Html.astro';
+import LinkIcon from '../components/icons/Link.astro';
+import LinkButton from '../components/LinkButton.astro';
+
+
+const TAGS = {
+    PHP: {
+        name: 'PHP',
+        class: 'bg-[#475b96] text-white',
+        icon: PHPIcon,
+    },
+    Bootstrap: {
+        name: 'Bootstrap',
+        class: 'bg-[#7709f6] text-white',
+        icon: BootstrapIcon,
+    },
+    JavaScript: {
+        name: 'JavaScript',
+        class: 'bg-[#f3c731] text-white',
+        icon: JavaScriptIcon,
+    },
+    Python: {
+        name: 'Python',
+        class: 'bg-[#306998] text-white',
+        icon: PythonIcon,
+    },
+    Firebase: {
+        name: 'Firebase',
+        class: 'bg-[#ffca28] text-white',
+        icon: FirebaseIcon,
+    },
+    Kotlin: {
+        name: 'Kotlin',
+        class: 'bg-[#0095d5] text-white',
+        icon: KotlinIcon,
+    },
+    JSON: {
+        name: 'JSON',
+        class: 'bg-[#000000] text-white',
+        icon: JsonIcon,
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-[#e54d26] text-white',
+        icon: HtmlIcon,
+    },
+};
+
+const PROJECTS = [
+  {
+    title: "Website - Municipalidad Distrital de Coishco",
+    description: 
+        "Website diseñado para la Municipalidad Distrital de Coishco, con el fin de informar a los ciudadanos sobre los servicios que brinda la municipalidad.",
+    link: "http://www.municoishco.gob.pe/",
+    /*github: 'https://github.com/Julians380/mdc_website',*/
+    image: '../../projects/website_mdc.webp',
+    tags: [TAGS.HTML, TAGS.Bootstrap, TAGS.JavaScript],
+  }/*,
+  {
+    title: "Sistema Web de Administración Tributaria",
+    description: 
+        "Sistema web de administración tributaria, para la gestión de los contribuyentes, predios, tributos, fraccionamientos y pagos de los ciudadanos de un distrito.",
+    link: "http://www.municoishco.gob.pe/",
+    github: '#',
+    image: '../../projects/DepressAlert.webp',
+    tags: [TAGS.PHP, TAGS.Bootstrap, TAGS.JavaScript, TAGS.JSON],
+  }*/,
+  {
+    title: "Aplicativo Móvil para la Valoración del Riesgo de Depresión",
+    description: 
+        "Aplicativo móvil para la detección de signos de depresión en la voz de las personas, usando técnicas de Deep Learning y Convolutional Neural Network para determinar el nivel de riesgo de padecer depresión.",
+  
+    //link: "http://www.municoishco.gob.pe/",
+    github: 'https://github.com/Julians380/DepressAlert-AppMobile.git',
+    image: '../../projects/DepressAlert.webp',
+    tags: [TAGS.Kotlin, TAGS.Python, TAGS.Firebase],
+},
+
+
+];	
+---
+<div class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map(( {title, description, link, github, image, tags}) => (
+            <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+                <div class="w-full md:w-1/2">
+                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                        <img 
+                            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                            src={image} loading="lazy" 
+                            alt={`Captura de pantala del proyecto ${image}`} 
+                        />
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 md:max-w-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+                        {title}
+                    </h3>
+                    <div class="flex flex-wrap mt-2">
+                        <ul class="flex gap-x-2 flex-row mb-2">
+                            {tags.map((tag) => (
+                                <li>
+                                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`}>
+                                        <tag.icon class="size-4" />
+                                        {tag.name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                        <div class="mt-2 text-gray-700 dark:text-gray-400">
+                            {description}
+                        </div>
+                        <footer class="flex items-end justify-start mt-4 gap-x-4">
+                            {github && (
+                                <LinkButton href={github}>
+                                <GitHubIcon class="size-6" />
+                                Code
+                                
+                                </LinkButton>
+                            )}
+                            {link && (
+                                <LinkButton href={link}>
+                                <LinkIcon class="size-4" />
+                                Preview
+                                </LinkButton>
+                            )}
+                        </footer>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</div>

@@ -1,0 +1,40 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+import Link from "./icons/Link.astro";
+
+const EXPERIENCE = [
+    {
+        date: 'Agosto, 2020 - Actualmente ...',
+        title: 'Programador de Aplicaciones Informaticas',
+        company: "Municipalidad Distrital de Coishco",
+        description: 
+            'Desarrollé un sistema de administración tributaria para la entidad. Desarrollé funcionalidades para el sistema de Administración de servicio de agua potable. Desarrollé el nuevo website institucional. Administración de la red interna y gestión de servidor proxy. Colaboré en iniciativas de Gobierno y Transformación Digital en coordinación con la Presidencia del Consejo de Ministros (PCM). Lideré la gestión operativa del área de la Sub Gerencia de Tecnología.',
+        //link: "https://www.municoishco.gob.pe",
+    },
+    {
+        date: 'Abril, 2019 - Agosto, 2019',
+        title: 'Soporte Técnico',
+        company: "Universidad San pedro",
+        description: 
+            'Gestioné y di mantenimiento a los equipos tecnológicos del campus universitario. Colaboré en la administración de la infraestructura tecnológica del campus universitario',
+    },
+    {
+        date: 'Enero, 2019 - Febrero, 2019',
+        title: 'Apoyo Operativo en la Sub Gerencia de Tecnología, Comunicaciones e Informatica',
+        company: "Municipalidad Distrital de Coishco",
+        description: 
+            'Brindé servicio técnico a los equipos tecnológicos. Desarrollo del website de la municipalidad de Coishco. Desarrollé el sitio web institucional. ',
+    },
+]
+---
+<ol class="relative mt-16">                  
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="">
+                <ExperienceItem { ...experience } />
+            </li>
+        ))
+    }
+</ol>
+
+

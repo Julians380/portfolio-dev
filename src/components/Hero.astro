@@ -1,0 +1,49 @@
+---
+import Badge from "../components/Badge.astro";
+import LinkedinIcon from '../components/icons/Linkedin.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import SocialPill from '../components/SocialPill.astro';
+---
+<div class ="max-w-xl">
+    <div class="flex gap-4 mb-4">
+        <img 
+            class="rounded-md shadow-lg size-20" 
+            src="../../src/assets/julians-photo.webp" 
+            alt="julians-photo"
+        />
+        <a 
+            href="https://www.linkedin.com/in/julianslanderas/" 
+            target="_blank"
+            rel="noopener"
+            class="flex justify-center items-center">
+            <Badge>Disponible para trabajar</Badge>
+        </a>
+    </div>
+    <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+        Hola! Soy Julians Landeras
+    </h1>
+    <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+    +2 años de experiencia. 
+    <strong>Ingenierio de Sistemas. Desarrollador FullStack. Administración de servidores y redes</strong> de Chimbote, Perú.
+    Experiencia en la optimización de procesos internos del SAT y coordinación de proyectos de gestión pública.
+    </p>
+
+</div>
+
+<nav class="flex gap-x-4 mt-4 flex-wrap">
+    <SocialPill href="https://www.linkedin.com/in/julianslanderas/">
+        <LinkedinIcon class="size-4 md:w-6 h-6" />
+            LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/Julians380">
+        <GithubIcon class="size-4 md:w-6 h-6" />
+            Github
+    </SocialPill>
+    <SocialPill href="mailto:julianslanderas@gmail.com">
+        <MailIcon class="size-4 md:w-6 h-6" />
+            julianslanderas@gmail.com
+    </SocialPill>
+</nav>
